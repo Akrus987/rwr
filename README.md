@@ -1,1 +1,1 @@
-# rwr
+Projekt webowej aplikacji VR
