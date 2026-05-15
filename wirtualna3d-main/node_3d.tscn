@@ -24,17 +24,30 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4arys"]
 size = Vector3(1.0280151, 1.0435181, 1.028595)
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_a202f"]
+rayleigh_coefficient = 19.49
+rayleigh_color = Color(0.7581211, 0.06217231, 0.09889393, 1)
+
 [sub_resource type="Sky" id="Sky_6iypd"]
+sky_material = SubResource("PhysicalSkyMaterial_a202f")
 
 [sub_resource type="Environment" id="Environment_tereu"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.10352026, 0.4534643, 0.4402589, 0.5294118)
 background_energy_multiplier = 1.44
 sky = SubResource("Sky_6iypd")
 sky_custom_fov = 16.7
-ambient_light_source = 3
-ambient_light_color = Color(0.27098608, 0.49755841, 0.47848988, 1)
+ambient_light_source = 2
+ambient_light_energy = 1.77
+tonemap_mode = 1
+ssr_enabled = true
+ssr_max_steps = 69
+ssr_fade_in = 0.42426375
+ssr_depth_tolerance = 9.71
+glow_enabled = true
+glow_normalized = true
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cdqbm"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_noarx"]
 
 [sub_resource type="Compositor" id="Compositor_imku0"]
 
@@ -104,8 +117,15 @@ shape = SubResource("BoxShape3D_4arys")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=876250992]
 transform = Transform3D(0.82609826, 0.22199652, -0.5179567, 0, 0.91913533, 0.3939419, 0.56352603, -0.3254347, 0.7592961, -1.593, 3.338, 3.427)
+light_color = Color(0.9065444, 0.9380421, 0.7860957, 1)
+shadow_enabled = true
+shadow_bias = 0.694
+shadow_normal_bias = 1.901
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 933.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=38388321]
 environment = SubResource("Environment_tereu")
-camera_attributes = SubResource("CameraAttributesPractical_cdqbm")
+camera_attributes = SubResource("CameraAttributesPractical_noarx")
 compositor = SubResource("Compositor_imku0")
